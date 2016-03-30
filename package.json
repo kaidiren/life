@@ -1,0 +1,24 @@
+{
+  "name": "life",
+  "version": "1.0.0",
+  "description": "life in console",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaidiren/life.git"
+  },
+  "keywords": [
+    "life",
+    "console",
+    "time"
+  ],
+  "author": "kaidiren@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaidiren/life/issues"
+  },
+  "homepage": "https://github.com/kaidiren/life#readme"
+}
