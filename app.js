@@ -1,19 +1,22 @@
+const _ = require('lodash');
 const express = require('express');
 const app = express();
 
 const LEX = require('letsencrypt-express');
-// const DOMAIN = 'xli.me,www.xli.me,life.xli.me';
 const EMAIL = 'kaidiren@gmail.com';
+const domains = ['xli.me', 'www.xli.me', 'life.xli.me'];
 
 const lex = LEX.create({
   configDir: require('os').homedir() + '/life',
   approveRegistration: function(hostname, approve) {
-    approve(null, {
-      domains: [hostname],
-      email: EMAIL,
-      agreeTos: true,
-      server: LEX.productionServerUrl
-    });
+    if (_.includes(domains, hostname)) {
+      approve(null, {
+        domains: [hostname],
+        email: EMAIL,
+        agreeTos: true,
+        server: LEX.productionServerUrl
+      });
+    }
   }
 });
 

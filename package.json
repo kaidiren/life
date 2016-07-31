@@ -23,6 +23,7 @@
   "homepage": "https://github.com/kaidiren/life",
   "dependencies": {
     "express": "^4.14.0",
-    "letsencrypt-express": "^1.1.5"
+    "letsencrypt-express": "^1.1.5",
+    "lodash": "^4.14.1"
   }
 }
