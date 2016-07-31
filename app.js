@@ -17,7 +17,8 @@ const lex = LEX.create({
       approve(null, {
         domains: [DOMAIN],
         email: EMAIL,
-        agreeTos: true
+        agreeTos: true,
+        server: LEX.productionServerUrl
       });
     }
   }
