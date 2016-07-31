@@ -11,7 +11,7 @@ const DOMAIN = 'www.xli.me';
 const EMAIL = 'kaidiren@gmail.com';
 
 const lex = LEX.create({
-  configDir: require('os').homedir() + '/github/life',
+  configDir: require('os').homedir() + '/life',
   approveRegistration: function(hostname, approve) {
     if (hostname === DOMAIN) {
       approve(null, {
