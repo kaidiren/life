@@ -2,14 +2,14 @@ const express = require('express');
 const app = express();
 
 const LEX = require('letsencrypt-express');
-const DOMAIN = 'xli.me,www.xli.me,life.xli.me';
+// const DOMAIN = 'xli.me,www.xli.me,life.xli.me';
 const EMAIL = 'kaidiren@gmail.com';
 
 const lex = LEX.create({
   configDir: require('os').homedir() + '/life',
   approveRegistration: function(hostname, approve) {
     approve(null, {
-      domains: [DOMAIN],
+      domains: [hostname],
       email: EMAIL,
       agreeTos: true,
       server: LEX.productionServerUrl
