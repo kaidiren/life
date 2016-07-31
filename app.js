@@ -7,7 +7,7 @@ app.get('/', function(req, res) {
 
 const LEX = require('letsencrypt-express').testing();
 
-const DOMAIN = 'xli.me,www.xli.me';
+const DOMAIN = 'www.xli.me';
 const EMAIL = 'kaidiren@gmail.com';
 
 const lex = LEX.create({
