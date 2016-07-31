@@ -20,5 +20,9 @@
   "bugs": {
     "url": "https://github.com/kaidiren/life/issues"
   },
-  "homepage": "https://github.com/kaidiren/life"
+  "homepage": "https://github.com/kaidiren/life",
+  "dependencies": {
+    "express": "^4.14.0",
+    "letsencrypt-express": "^1.1.5"
+  }
 }
