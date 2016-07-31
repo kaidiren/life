@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 
 const LEX = require('letsencrypt-express');
-const DOMAIN = 'xli.me,www.xli.me';
+const DOMAIN = 'xli.me,www.xli.me,life.xli.me';
 const EMAIL = 'kaidiren@gmail.com';
 
 const lex = LEX.create({
