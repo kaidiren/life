@@ -24,6 +24,10 @@
   "dependencies": {
     "express": "^4.14.0",
     "letsencrypt-express": "^1.1.5",
-    "lodash": "^4.14.1"
+    "lodash": "^4.14.1",
+    "sequelize": "^3.23.6",
+    "spdy": "^3.3.4",
+    "sqlite3": "^3.1.4",
+    "swig": "^1.4.2"
   }
 }
