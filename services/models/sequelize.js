@@ -1,7 +1,8 @@
-const config = require('../config');
+const config = require('config');
 const Sequelize = require('sequelize');
 
 const life = config.sqlite.life;
+
 const sequelize = new Sequelize(life.database, '', '', {
   dialect: 'sqlite',
   pool: {

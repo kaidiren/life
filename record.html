@@ -1,0 +1,64 @@
+{% extends 'layout.html' %}
+
+{% block title %}录播记录查询页面{% endblock %}
+
+{% block body %}
+  <form method="post" action="/record" class="form-inline">
+    <input name= "account_id" class="form-group" placeholder="account_id" > </input>
+    <input name= "task_id" placeholder="task_id" > </input>
+    <input name= "bucket_name" placeholder="bucket_name" > </input>
+    <input name= "vhost" placeholder="vhost" > </input>
+    <input name= "app" placeholder="app" > </input>
+    <input name= "stream" placeholder="stream" > </input>
+    <br>
+    <input name= "gte_record_start_time" placeholder=">= record_start_time" > </input>
+    <input name= "lte_record_start_time" placeholder="<= record_start_time" > </input>
+    <input name= "gte_record_stop_time" placeholder=">= record_stop_time" > </input>
+    <input name= "lte_record_stop_time" placeholder="<= record_stop_time" > </input>
+    <input name= "gte_callback_time" placeholder=">= callback_time" > </input>
+    <input name= "lte_callback_time" placeholder="<= callback_time" > </input>
+    <br>
+    <input name= "type" placeholder="type" > </input>
+    <input name= "callback_status_code" placeholder="callback_status_code" >
+    <input name= "offset" placeholder="要跳过多少条" >
+    <input name= "limit" placeholder="要取多少条" >
+    </input><input type="submit" value="提交查询" />
+  </form>
+  <br>
+  <table class="table table-bordered">
+    <tr>
+      <td>id</td>
+      <td>account_id</td>
+      <td>task_id</td>
+      <td>bucket_name</td>
+      <td>vhost</td>
+      <td>app</td>
+      <td>stream</td>
+      <td>specific_path</td>
+      <td>whole_path</td>
+      <td>record_start_time</td>
+      <td>record_stop_time</td>
+      <td>callback_time</td>
+      <td>type</td>
+      <td>callback_status_code</td>
+    </tr>
+    {% for record in records %}
+    <tr>
+      <td>{{ record.id }}</td>
+      <td>{{ record.account_id }}</td>
+      <td>{{ record.task_id }}</td>
+      <td>{{ record.bucket_name }}</td>
+      <td>{{ record.vhost }}</td>
+      <td>{{ record.app }}</td>
+      <td>{{ record.stream }}</td>
+      <td>{{ record.specific_path }}</td>
+      <td>{{ record.whole_path }}</td>
+      <td>{{ record.record_start_time }}</td>
+      <td>{{ record.record_stop_time }}</td>
+      <td>{{ record.callback_time }}</td>
+      <td>{{ record.type }}</td>
+      <td>{{ record.callback_status_code || 'null'}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

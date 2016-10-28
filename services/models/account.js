@@ -1,16 +1,8 @@
 const Sequelize = require('sequelize');
-const sequelize = require('../lib/sequelize');
+const sequelize = require('./sequelize');
 
-module.exports = sequelize.define('daliy', {
-  account_id: {
-    type: Sequelize.INTEGER.UNSIGNED,
-    allowNull: false,
-    validate: {
-      isInt: true,
-    },
-    comment: '账户ID',
-  },
-  daily_id: {
+module.exports = sequelize.define('account', {
+  id: {
     type: Sequelize.INTEGER.UNSIGNED,
     allowNull: false,
     autoIncrement: true,
@@ -20,28 +12,48 @@ module.exports = sequelize.define('daliy', {
     },
     comment: '账户ID',
   },
-  content: {
-    type: Sequelize.TEXT,
+  name: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    comment: '账户名',
+  },
+  password: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    comment: '密码',
+  },
+  salt: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    comment: '加密的盐'
+  },
+  email: {
+    type: Sequelize.STRING,
     allowNull: false,
     comment: '文本内容',
+  },
+  mobile: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    comment: '富文本内容'
   },
   status: {
     type: Sequelize.STRING(64),
     allowNull: false,
     defaultValue: 'normal',
     validate: {
-      isIn: [['normal', 'freeze', 'deleted']],
+      isIn: [['normal', 'blocked', 'deleted']],
     },
     comment: '状态',
   },
-  visible: {
+  gender: {
     type: Sequelize.STRING(64),
     allowNull: false,
-    defaultValue: 'public',
+    defaultValue: 'secret',
     validate: {
-      isIn: [['pubilc', 'private']],
+      isIn: [['male', 'female', 'secret']],
     },
-    comment: '可见',
+    comment: '性别',
   },
   created_at: {
     type: Sequelize.INTEGER.UNSIGNED,
@@ -69,16 +81,24 @@ module.exports = sequelize.define('daliy', {
       isInt: true,
     },
     comment: '删除时间'
-  },
-  tags: {
-    type: Sequelize.TEXT,
-    allowNull: false,
-    defaultValue: '[]',
-    comment: '标签',
-  },
+  }
 }, {
   freezeTableName: true, // 禁止修改表名
   timestamps: false, // 禁止自动增加时间戳
   underscored: true, // 下划线模式
-  tableName: 'daily',
+  tableName: 'account',
+  indexes: [
+    {
+      unique: true,
+      fields: ['name']
+    },
+    {
+      unique: true,
+      fields: ['mobile']
+    },
+    {
+      unique: true,
+      fields: ['email']
+    }
+  ]
 });

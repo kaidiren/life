@@ -1,7 +1,7 @@
 module.exports = {
   host: '127.0.0.1',
   port: '80',
-  dev_mode: true,
+  env: 'development',
 
   domains: [
     'xli.me',
@@ -18,13 +18,8 @@ module.exports = {
   },
 
   admin: {
-    name: 'rkd',
+    name: 'life',
     password: '123456',
-  },
-
-  security: {
-    cookie: 'cccccc',
-    session: 'ssssss'
   },
 
   enable_https: false

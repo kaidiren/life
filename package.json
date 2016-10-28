@@ -2,9 +2,11 @@
   "name": "life",
   "version": "1.0.0",
   "description": "life in console",
-  "main": "lib/index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --harmony app.js",
+    "dev": "./node_modules/.bin/nodemon -e js,css,html --harmony app.js"
   },
   "repository": {
     "type": "git",
@@ -22,12 +24,21 @@
   },
   "homepage": "https://github.com/kaidiren/life",
   "dependencies": {
+    "basic-auth": "^1.0.4",
+    "config": "^1.21.0",
+    "cookie-parser": "^1.4.3",
     "express": "^4.14.0",
+    "express-session": "^1.14.1",
     "letsencrypt-express": "^1.1.5",
     "lodash": "^4.14.1",
     "sequelize": "^3.23.6",
     "spdy": "^3.3.4",
-    "sqlite3": "^3.1.4",
-    "swig": "^1.4.2"
+    "sqlite3": "^3.1.6",
+    "swig": "^1.4.2",
+    "uuid": "^2.0.3",
+    "wangeditor": "^2.1.21"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
